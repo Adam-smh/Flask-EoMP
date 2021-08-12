@@ -207,11 +207,11 @@ def user_registration():
     response = {}
 
     if request.method == "POST":
-        first_name = request.form['first_name']
-        last_name = request.form['last_name']
-        email = request.form['email']
-        username = request.form['username']
-        password = request.form['password']
+        first_name = request.json['first_name']
+        last_name = request.json['last_name']
+        email = request.json['email']
+        username = request.json['username']
+        password = request.json['password']
 
         if not first_name or not last_name or not email or not username or not password:
             response["message"] = "Error, please fill all fields."
@@ -232,11 +232,11 @@ def add_product():
     response = {}
     try:
         if request.method == "POST":
-            product_name = request.form["product_name"]
-            product_price = request.form["product_price"]
-            product_description = request.form["product_description"]
-            product_type = request.form["product_type"]
-            user_id = request.form["user_id"]
+            product_name = request.json["product_name"]
+            product_price = request.json["product_price"]
+            product_description = request.json["product_description"]
+            product_type = request.json["product_type"]
+            user_id = request.json["user_id"]
 
             int(product_price)
 

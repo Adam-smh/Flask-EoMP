@@ -227,7 +227,6 @@ def user_registration():
 
 
 @app.route('/add-product/', methods=["POST"])
-@jwt_required()
 def add_product():
     response = {}
     try:
@@ -285,7 +284,7 @@ def view_product(product_id):
 
 
 @app.route('/edit-product/<int:product_id>/', methods=['PUT'])
-@jwt_required()
+
 def edit_product(product_id):
     response = None
 
@@ -298,7 +297,7 @@ def edit_product(product_id):
 
 
 @app.route('/delete-product/<int:product_id>/')
-@jwt_required()
+
 def delete_product(product_id):
     response = {}
 
